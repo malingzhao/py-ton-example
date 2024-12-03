@@ -656,10 +656,7 @@ class Transaction:
             return bytes([0, 0])
 
         payload_bytes = self.payload.to_request_bytes()
-        print("self byss --->",self.payload.to_message_body_cell().bits.array.hex())
-        print("cursor")
-        print(self.payload.to_message_body_cell().bits.cursor)
-        print("message body  hash-->",self.payload.to_message_body_cell().bytes_hash().hex())
+
         payload_cell = self.payload.to_message_body_cell()
         return b"".join([
             bytes([1]),

@@ -14,7 +14,6 @@ TON_CONNECT_PREFIX = b"\xff\xffton-connect"
 def write_varuint(n: int) -> bytes:
     bitlen = len(bin(n)) - 2
     bytelen = ceil(bitlen / 8)
-    print("bytelen -->", bytelen)
     print(n.to_bytes(bytelen, byteorder="big"))
     return b"".join([bytes([bytelen]), n.to_bytes(bytelen, byteorder="big")])
 
